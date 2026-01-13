@@ -1,7 +1,8 @@
 import { TodoListItem } from "./TodoListItem";
 
 
-const TodoList = ({ todoList, onCompleteTodo }) => {
+
+const TodoList = ({ todoList, onCompleteTodo, onUpdateTodo }) => {
 
     const filteredTodoList = todoList.filter((todo) => !todo.isCompleted)
 
@@ -13,7 +14,7 @@ const TodoList = ({ todoList, onCompleteTodo }) => {
             ) :
 
             <ul>
-                {filteredTodoList.map(todo => < TodoListItem key={todo.id} todo={todo} onCompleteTodo={onCompleteTodo} />)}
+                {filteredTodoList.map(todo => < TodoListItem key={todo.id} todo={todo} onCompleteTodo={onCompleteTodo} onUpdateTodo={onUpdateTodo} />)}
             </ul>
 
 
